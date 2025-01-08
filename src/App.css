@@ -1,0 +1,171 @@
+.chat-container {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #0b0f29, #121212);
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.github-button {
+  background-color: #222; /* Button background color */
+  color: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Space between text and icon */
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+h1 {
+  margin: 0;
+}
+
+/* Button Hover Effect */
+.github-button:hover {
+  background-color: #333;
+  border-color: #fff;
+}
+
+/* GitHub Icon */
+.github-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.github {
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  margin: 0;
+}
+
+.heading {
+  width: 10%;
+}
+
+.chat-header {
+  background-color: #2d3748;
+  text-align: center;
+  padding: 1rem;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 450px;
+}
+
+/* .container {
+  width: 900px;
+  display: flex;
+  overflow-y: auto;
+  justify-content: center;
+} */
+
+.messages-wrapper {
+  flex: 1;
+  padding: 1rem;
+  margin: 0; /* Ensure no side margins */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column; /* Stack messages vertically */
+  gap: 0.5rem; /* Add space between messages */
+}
+
+.message {
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  max-width: 30%; /* Ensures messages don't span too wide */
+  word-wrap: break-word;
+  position: relative; /* Allows easier positioning */
+}
+
+/* Bot messages (Assistant) */
+.message.assistant {
+  background-color: #2b6cb0; /* Blue background for the assistant */
+  text-align: left;
+  align-self: flex-start;
+  margin-left: 20%; /* Offset from the left */
+}
+
+/* User messages */
+.message.user {
+  background-color: #48bb78; /* Green background for the user */
+  text-align: right;
+  align-self: flex-end;
+  margin-right: 20%; /* Offset from the right */
+}
+
+.type-indicator {
+  display: flex;
+  align-self: flex-start;
+  color: #ffffff99;
+}
+
+.type-indicator span {
+  display: inline-block;
+  padding: 0 0.075em;
+  animation: type-indicator 1s ease-in-out infinite;
+}
+
+.type-indicator span:nth-child(2) {
+  animation-delay: 150ms;
+}
+
+.type-indicator span:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+@keyframes type-indicator {
+  0% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  50% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+}
+
+.input-bar {
+  display: flex;
+  padding: 1rem;
+  background-color: #20232a;
+  justify-content: center;
+  width: 600px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.input-bar input {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  margin-right: 1rem;
+  background-color: #1a202c;
+  color: white;
+  height: 30px;
+}
+
+.input-bar button {
+  padding: 0.5rem 1rem;
+  background-color: #2d3748;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.input-bar button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
