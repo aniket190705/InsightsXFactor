@@ -58,13 +58,16 @@ const App = () => {
     setWaitingOnResponse(true);
 
     try {
-      const response = await fetch("http://localhost:3000/runFlow", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ message: newMessage }),
-      });
+      const response = await fetch(
+        "https://insightsxfactor.onrender.com/runFlow",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ message: newMessage }),
+        }
+      );
 
       const result = await response.json();
       if (response.ok) {
