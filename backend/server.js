@@ -94,10 +94,16 @@ app.use(bodyParser.json());
 app.use(cors()); // Enable CORS for all origins
 
 // LangflowClient Setup
-const flowIdOrName = '964117b6-5aa2-447b-bd81-905c5956a505';
-const langflowId = '4fb42d99-af6b-4567-9df0-3cb6229d9f9c';
-const applicationToken = 'AstraCS:sByTcdHvuTtHjLNXiJiYiuHf:f55674f041a82f0dd7b7040e1437951089c1a5a6599361487d905ec4d706e4d7';
-const langflowClient = new LangflowClient('https://api.langflow.astra.datastax.com', applicationToken);
+// Load environment variables
+import dotenv from "dotenv";
+dotenv.config();
+
+// LangflowClient Setup
+const flowIdOrName = process.env.FLOW_ID_OR_NAME;
+const langflowId = process.env.LANGFLOW_ID;
+const applicationToken = process.env.APPLICATION_TOKEN;
+const langflowClient = new LangflowClient(process.env.LANGFLOW_API_URL, applicationToken);
+
 
 // API Endpoint
 app.post('/runFlow', async (req, res) => {
