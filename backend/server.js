@@ -153,6 +153,10 @@ app.post('/runFlow', async (req, res) => {
     }
 });
 
+app.get('/', (req, res) => {
+    res.send('Langflow Server is running');
+});
+
 // Start the server
 app.listen(port, () => {
     console.log(`Langflow server running at http://localhost:${port}`);
